@@ -1,7 +1,7 @@
 /*Section 1: Header*/
 
 .background-image{
-    background-image: url('../assets/title-background.jpg');
+    background-image: url('../../assets/title-background.jpg');
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat; 
@@ -174,7 +174,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 .footer-flex{
     height: 170px;
-    background-image: url('../assets/footer-background.jpg');
+    background-image: url('../../assets/footer-background.jpg');
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat; 

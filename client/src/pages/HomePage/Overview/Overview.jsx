@@ -1,4 +1,4 @@
-import playerMain from '../../assets/player-main.jpg';
+import playerMain from '../../../assets/player-main.jpg';
 const Overview = () => {
     return(
         <section class="overview">

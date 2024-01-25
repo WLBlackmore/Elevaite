@@ -1,6 +1,6 @@
-import playerSecondary from '../../assets/player-secondary.png';
-import basketballHoop from '../../assets/basketball-hoop.png';
-import basketballShoe from '../../assets/basketball-shoe.jpg';
+import playerSecondary from '../../../assets/player-secondary.png';
+import basketballHoop from '../../../assets/basketball-hoop.png';
+import basketballShoe from '../../../assets/basketball-shoe.jpg';
 
 const Features = () => {
     return(

@@ -1,10 +1,10 @@
-import './Home.css';
+import './HomePage.css';
 
 // Components
 import HomeTitle from './HomeTitle/HomeTitle';
 import Overview from './Overview/Overview';
 import Features from './Features/Features';
-import Footer from './Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
     return(
