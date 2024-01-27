@@ -12,7 +12,6 @@ const Home = () => {
 </head>
 <body>
     <HomeTitle/>
-    <Overview/>
     <Features/>
     <Footer/>
 </body>
