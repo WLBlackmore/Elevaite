@@ -1,10 +1,12 @@
+import styles from './Overview.module.css';
 import playerMain from '../../../assets/player-main.jpg';
+
 const Overview = () => {
     return(
-        <section class="overview">
-        <div class="overview-flex">
-            <div class="overview-img"><img src={playerMain} alt="basketball player"></img></div>
-            <div class="overview-text">
+        <section className={styles.overview}>
+        <div className={styles.overviewFlex}>
+            <div className={styles.overviewImg}><img src={playerMain} alt="basketball player"></img></div>
+            <div className={styles.overviewText}>
                 <h3>Providing Historical Basketball
                     Statistics in one place</h3>
                 <p>Welcome to our comprehensive collection of historical basketball statistics! Here, you will find a treasure trove of data and records spanning the rich history of the sport. From legendary players and iconic teams to remarkable achievements and game-changing moments, we have meticulously curated a one-stop resource for all your basketball statistical needs.</p>

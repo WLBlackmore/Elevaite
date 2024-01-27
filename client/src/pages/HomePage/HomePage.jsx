@@ -1,5 +1,3 @@
-import './HomePage.css';
-
 // Components
 import HomeTitle from './HomeTitle/HomeTitle';
 import Overview from './Overview/Overview';

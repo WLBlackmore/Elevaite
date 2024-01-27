@@ -1,12 +1,13 @@
 import playerSecondary from '../../../assets/player-secondary.png';
 import basketballHoop from '../../../assets/basketball-hoop.png';
 import basketballShoe from '../../../assets/basketball-shoe.jpg';
+import styles from './Features.module.css';
 
 const Features = () => {
     return(
-        <section class="features">
-        <div class="features-flex">
-            <div class="card"> 
+        <section className={styles.features}>
+        <div className={styles.featuresFlex}>
+            <div className={styles.card}> 
                 <img src={playerSecondary} alt="Player"></img>
                 <h4>Player Comparison Tool</h4>
                 <ul>
@@ -16,7 +17,7 @@ const Features = () => {
                 </ul>
             </div>
 
-            <div class="card"> 
+            <div className={styles.card}> 
                 <img src={basketballHoop} alt="Hoop"></img>
                 <h4>Team Performance Tool</h4>
                 <ul>
@@ -26,7 +27,7 @@ const Features = () => {
                 </ul>
             </div>
 
-            <div class="card"> 
+            <div className={styles.card}> 
                 <img src={basketballShoe} alt="Shoe"></img>
                 <h4>AI Projection Tool</h4>
                 <ul>
