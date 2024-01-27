@@ -5,7 +5,7 @@
     color: #d9f3ee;
 }
 
-.footer-flex{
+.footerFlex{
     height: 170px;
     background-image: url('../../assets/footer-background.jpg');
     background-size: cover; 
@@ -31,7 +31,7 @@
     margin-left: 5px;
 }
 
-.line-left,.line-right{
+.lineLeft,.lineRight{
     height: 50px;
     width: 100px;
     align-self: center;
