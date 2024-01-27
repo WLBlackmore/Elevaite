@@ -1,0 +1,42 @@
+/* NavBar Container */
+nav {
+    background-color: #333; /* Dark background */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+  }
+  
+  /* Unordered List inside NavBar */
+  nav ul {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centers the links horizontally */
+  }
+  
+  /* List Items inside NavBar */
+  nav ul li {
+    margin: 0 1em; /* Spacing between each link */
+  }
+  
+  /* Link Styling */
+  nav ul li a {
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 1.2em;
+    padding: 0.5em 1em;
+  }
+  
+  /* Active Link Styling */
+  nav ul li a.active {
+    border-bottom: 2px solid purple; /* Green bottom border for active link */
+    padding-bottom: 0.3em;
+  }
+  
+  /* Hover Effect */
+  nav ul li a:hover {
+    color: mediumslateblue; /* Changes text color on hover */
+    transition: color 0.3s;
+  }
+  
