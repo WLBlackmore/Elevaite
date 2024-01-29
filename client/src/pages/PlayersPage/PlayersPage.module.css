@@ -1,7 +1,7 @@
 /*Section 1: Header*/
 
 .backgroundImage{
-    background-image: url('../../assets/PlayersBackgound.png');
+    background-image: url('../../assets/PlayersBackground.png');
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat; 
@@ -36,4 +36,15 @@ h1>span{
 .titleText>h3{
     font-size: 1.5rem;
     font-weight: normal;
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: space-around; /* This will distribute space evenly */
+    align-items: center;
+    width: 100%;
+    max-width: 1500px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* This will center the container if it's less than 100% width */
+    gap: 250px;
+    padding-top: 30px;
 }

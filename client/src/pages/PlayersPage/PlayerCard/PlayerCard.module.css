@@ -1,0 +1,48 @@
+/* StatsCard.module.css */
+.statsCard {
+    background: rgba(45, 45, 45, 0.5); /* Dark grey with 80% opacity */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for contrast */
+    color: white;
+    width: 800px; /* or whatever size you desire */
+    height: 650px;
+  }
+  
+  .season {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .playerInfo {
+    margin-bottom: 20px;
+  }
+  
+  .name,
+  .age,
+  .team,
+  .activity {
+    margin-bottom: 5px;
+  }
+  
+  .playerStats .stat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .label,
+  .value {
+    display: block;
+  }
+  
+  .changePlayer {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
