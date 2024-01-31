@@ -1,12 +1,12 @@
 import styles from "./PlayerCard.module.css";
 import headshot from "../../../assets/PlayerPlaceholder.png";
 
-const PlayerCard = () => {
-  let playerName = "LeBron James";
-  let age = "39";
-  let team = "LAL";
-  let activity = "Active";
-  let pts = 29;
+const PlayerCard = (props) => {
+  let playerName = props.player.info.playerName;
+  let age = props.player.info.age;
+  let team = props.player.info.team;
+  let activity = props.player.info.activity;
+  let pts = props.player.stats[0].value;
   return (
     <div className={styles.statsCard}>
       <div className={styles.season}>2022-24 Season Stats</div>
