@@ -15,4 +15,4 @@ def getPlayerSeasonStats(player_name, year):
     print(player_name + " has these stats in year " + year + '\n')
     print(player_szn_stats)
 
-getPlayerSeasonStats("Kyle Lowry", "2023-24")
+getPlayerSeasonStats("Alperen Sengun", "2023-24")

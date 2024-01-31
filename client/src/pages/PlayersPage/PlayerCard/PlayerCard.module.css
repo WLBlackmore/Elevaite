@@ -7,8 +7,16 @@
     color: white;
     width: 800px; /* or whatever size you desire */
     height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure the content stretches to the full width of the card */
+}
   .season {
     font-weight: bold;
     margin-bottom: 10px;
@@ -16,8 +24,19 @@
   
   .playerInfo {
     margin-bottom: 20px;
+    flex: 1;
   }
-  
+
+  .headshot {
+    /* Style as needed */
+    padding: 10px; /* Optional spacing around the image */
+}
+.headshot img {
+  height: 200px; /* Set the desired height */
+  width: auto; /* Maintain the aspect ratio */
+  border-radius: 10px; /* Optional for rounded corners */
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+}
   .name,
   .age,
   .team,
