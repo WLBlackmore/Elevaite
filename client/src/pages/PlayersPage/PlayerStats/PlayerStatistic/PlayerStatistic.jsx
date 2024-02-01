@@ -1,4 +1,5 @@
 import styles from './PlayerStatistic.module.css';
+import PlayerStatBar from './PlayerStatBar/PlayerStatBar';
 
 const PlayerStatistic = (props) => {
       let stat = props.stat;
@@ -7,7 +8,7 @@ const PlayerStatistic = (props) => {
     return (
     <div className={styles.statContainer}>
        <p>{textOutput}</p> 
-       <p>{textOutput}</p> 
+       <PlayerStatBar/>
     </div>
     )
 }

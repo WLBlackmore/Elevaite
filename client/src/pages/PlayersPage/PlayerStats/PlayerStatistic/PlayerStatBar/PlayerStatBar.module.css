@@ -1,0 +1,6 @@
+.statBar{
+    background-color: white;
+    width: 85%;
+    height: 5px;
+    align-self: center;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.9);}
