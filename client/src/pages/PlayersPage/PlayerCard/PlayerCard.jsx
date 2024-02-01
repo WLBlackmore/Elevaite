@@ -1,12 +1,12 @@
 import styles from "./PlayerCard.module.css";
 import headshot from "../../../assets/PlayerPlaceholder.png";
+import PlayerStats from "../PlayerStats/PlayerStats";
 
 const PlayerCard = (props) => {
   let playerName = props.player.info.playerName;
   let age = props.player.info.age;
   let team = props.player.info.team;
   let activity = props.player.info.activity;
-  let pts = props.player.stats[0].value;
   return (
     <div className={styles.statsCard}>
       <div className={styles.season}>2022-24 Season Stats</div>
@@ -24,10 +24,7 @@ const PlayerCard = (props) => {
       </div>
       <div className={styles.playerStats}>
         {/* Player stats like PTS would go here */}
-        <div className={styles.stat}>
-          <span className={styles.label}>PTS:</span>
-          <span className={styles.value}>{pts}</span>
-        </div>
+        <PlayerStats stats={props.player.stats}/>
         {/* Repeat for each stat */}
       </div>
       <button className={styles.changePlayer}>Change player</button>
