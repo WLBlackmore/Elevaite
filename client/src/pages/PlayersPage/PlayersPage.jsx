@@ -8,7 +8,7 @@ const PlayersPage = () => {
     team: "LAL",
     activity:"Active"},
     stats: [
-      {label:"PTS", value: "28"}, 
+      {label:"PTS", value: "15"}, 
       {label:"AST", value: "6"}, 
       {label:"REB", value: "8"}
   ]
