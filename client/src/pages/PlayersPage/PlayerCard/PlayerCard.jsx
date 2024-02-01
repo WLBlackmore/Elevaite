@@ -22,11 +22,7 @@ const PlayerCard = (props) => {
           <img src={headshot} alt={`${playerName} headshot`} />
         </div>
       </div>
-      <div className={styles.playerStats}>
-        {/* Player stats like PTS would go here */}
         <PlayerStats stats={props.player.stats}/>
-        {/* Repeat for each stat */}
-      </div>
       <button className={styles.changePlayer}>Change player</button>
     </div>
   );
