@@ -1,8 +1,17 @@
+@keyframes growWidth {
+    from {
+        width: 0%;
+    }
+    to {
+        /* The actual width will be set dynamically, so this is just a placeholder. */
+        width: 100%;
+    }
+}
+
 .statBar {
     background-color: white;
-    width: 85%; /* This initial width will be overridden by inline styles. */
     height: 5px;
     align-self: center;
     box-shadow: 0 0 15px rgba(255, 20, 147, 0.9);
-    transition: width 0.5s ease-out; /* Add this line */
+    /* Apply this animation only initially */
 }
