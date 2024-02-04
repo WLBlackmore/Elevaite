@@ -1,5 +1,7 @@
 import PlayerCard from "./PlayerCard/PlayerCard";
 import styles from "./PlayersPage.module.css";
+import axios from 'axios';
+
 const PlayersPage = () => {
   // To be replaced with API call
   let player1 = {

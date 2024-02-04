@@ -68,3 +68,29 @@
     margin-top: 20px;
   }
   
+  .playerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Adjust based on your layout */
+    margin-top: 20px;
+  }
+  
+  .inputField {
+    margin: 5px 0; /* Spacing between inputs */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners for the input fields */
+    width: 70%; /* Relative width to the card size */
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #007bff; /* Example blue */
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  

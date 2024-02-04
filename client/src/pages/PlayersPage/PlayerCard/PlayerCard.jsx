@@ -16,7 +16,6 @@ const PlayerCard = (props) => {
           <div className={styles.age}>Age: {age} years old</div>
           <div className={styles.team}>Team: {team}</div>
           <div className={styles.activity}>Activity: {activity}</div>
-          {/* Additional player stats can be added here */}
         </div>
         <div className={styles.headshot}>
           <img src={headshot} alt={`${playerName} headshot`} />
