@@ -7,7 +7,7 @@ const PlayersPage = () => {
   const handlePlayerInputSubmit = ({ player1, player2 }) => {
     console.log('Player 1 Data:', player1);
     console.log('Player 2 Data:', player2);
-    axios.post('/api/players', { player1, player2 })
+    axios.post('http://localhost:5000/players', { player1, player2 })
     .then(response => {
       // Handle the response here
       console.log('Success:', response.data);
