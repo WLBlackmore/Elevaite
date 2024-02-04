@@ -4,6 +4,20 @@ import styles from "./PlayersPage.module.css";
 import axios from 'axios';
 
 const PlayersPage = () => {
+  const handlePlayerInputSubmit = ({ player1, player2 }) => {
+    console.log('Player 1 Data:', player1);
+    console.log('Player 2 Data:', player2);
+    axios.post('/api/players', { player1, player2 })
+    .then(response => {
+      // Handle the response here
+      console.log('Success:', response.data);
+    })
+    .catch(error => {
+      // Handle the error here
+      console.error('Error:', error);
+    });
+  }
+
   // To be replaced with API call
   let player1 = {
     info: {playerName: "LeBron James",
@@ -30,7 +44,7 @@ const PlayersPage = () => {
   return (
     <section className={styles.title}>
       <div className={styles.backgroundImage}>
-      <PlayerInput/>
+      <PlayerInput onSubmit={handlePlayerInputSubmit}/>
         <div className={styles.cardsContainer}>
           <PlayerCard player={player1}/>
           <PlayerCard player={player2}/>
