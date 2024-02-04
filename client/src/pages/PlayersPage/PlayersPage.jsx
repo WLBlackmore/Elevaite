@@ -1,4 +1,5 @@
 import PlayerCard from "./PlayerCard/PlayerCard";
+import PlayerInput from "./PlayerInput/PlayerInput";
 import styles from "./PlayersPage.module.css";
 import axios from 'axios';
 
@@ -29,6 +30,7 @@ const PlayersPage = () => {
   return (
     <section className={styles.title}>
       <div className={styles.backgroundImage}>
+      <PlayerInput/>
         <div className={styles.cardsContainer}>
           <PlayerCard player={player1}/>
           <PlayerCard player={player2}/>

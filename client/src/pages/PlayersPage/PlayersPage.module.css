@@ -5,8 +5,12 @@
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat; 
-    min-height: 100px;
+    min-height: 900px;
     background-attachment: fixed; /* Add this line */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Central alignment of children */
+    justify-content: flex-start; /* Align children to the top */
 }
 
 body{
@@ -48,4 +52,5 @@ h1>span{
     margin: 0 auto; /* This will center the container if it's less than 100% width */
     gap: 250px;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
