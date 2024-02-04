@@ -25,6 +25,9 @@
   .playerInfo {
     margin-bottom: 20px;
     flex: 1;
+    padding-top: 10px;
+    font-size: 18px;
+    line-height: 35px;
   }
 
   .headshot {
