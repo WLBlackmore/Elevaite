@@ -10,7 +10,8 @@ const PlayersPage = () => {
     axios.post('http://localhost:5000/players', { player1, player2 })
     .then(response => {
       // Handle the response here
-      console.log('Success:', response.data);
+      let player1Data = JSON.parse(response.data)[0]
+      console.log('Success:', player1Data.PTS);
     })
     .catch(error => {
       // Handle the error here

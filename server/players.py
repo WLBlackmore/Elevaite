@@ -13,6 +13,6 @@ def getPlayerSeasonStats(player_name, year):
     career_df = career_stats.get_data_frames()[0]
     player_szn_stats = career_df[career_df['SEASON_ID'] == year]
     print(player_name + " has these stats in year " + year + '\n')
-    print(player_szn_stats)
+    return player_szn_stats
 
 getPlayerSeasonStats("Alperen Sengun", "2023-24")
