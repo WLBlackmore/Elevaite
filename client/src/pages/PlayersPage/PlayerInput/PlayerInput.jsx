@@ -44,7 +44,7 @@ const PlayerInput = ({ onSubmit }) => {
             />
           </div>
         </div>
-        <button type="submit" className={styles.submitButton}>Submit</button>
+        <button type="submit" className={styles.submitButton}>Compare</button>
       </form>
     </div>
   );

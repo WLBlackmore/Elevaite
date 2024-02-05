@@ -6,7 +6,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for contrast */
     color: white;
     width: 800px; /* or whatever size you desire */
-    height: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;

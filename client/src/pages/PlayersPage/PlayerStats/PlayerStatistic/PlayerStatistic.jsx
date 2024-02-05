@@ -8,7 +8,7 @@ const PlayerStatistic = (props) => {
     return (
     <div className={styles.statContainer}>
        <p>{textOutput}</p> 
-       <PlayerStatBar value={stat.value}/>
+       <PlayerStatBar value={stat.value} max={stat.max}/>
     </div>
     )
 }

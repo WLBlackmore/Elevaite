@@ -4,7 +4,7 @@ import styles from "./PlayerStatBar.module.css";
 const PlayerStatBar = (props) => {
     const [barWidth, setBarWidth] = useState('0%'); // Start with 0% width
     let value = props.value;
-    let max = 38;
+    let max = props.max;
 
     useEffect(() => {
         // This function updates the bar width with transition after component mounts

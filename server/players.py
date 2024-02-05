@@ -5,6 +5,7 @@ def getPlayerIdFromName(player_name):
     all_players = players.get_players()
     player_info = [player for player in all_players if player['full_name'] == player_name][0]
     player_id = player_info['id']
+    print (player_info)
     return player_id
 
 def getPlayerSeasonStats(player_name, year):
@@ -14,4 +15,3 @@ def getPlayerSeasonStats(player_name, year):
     player_szn_stats = career_df[career_df['SEASON_ID'] == year]
     print(player_name + " has these stats in year " + year + '\n')
     return player_szn_stats
-
