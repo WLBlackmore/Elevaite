@@ -15,4 +15,3 @@ def getPlayerSeasonStats(player_name, year):
     print(player_name + " has these stats in year " + year + '\n')
     return player_szn_stats
 
-getPlayerSeasonStats("Alperen Sengun", "2023-24")
