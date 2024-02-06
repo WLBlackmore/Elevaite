@@ -16,14 +16,14 @@ const PlayersPage = () => {
       { label: "FG%", value: "0", max: "67" },
       { label: "FGA", value: "0", max: "27.8" },
       { label: "FGM", value: "0", max: "12.1" },
-      { label: "3PT%", value: "0", max: "45.4" },
-      { label: "3PTA", value: "0", max: "13.2" },
-      { label: "3PTM", value: "0", max: "5.3" },
+      { label: "3P%", value: "0", max: "45.4" },
+      { label: "3PA", value: "0", max: "13.2" },
+      { label: "3PM", value: "0", max: "5.3" },
       { label: "FT%", value: "0", max: "92.4" },
       { label: "FTA", value: "0", max: "10.2" },
-      { label: "GP", value: "0", max: "82" },
+      { label: "GP ", value: "0", max: "82" },
       { label: "MIN", value: "0", max: "41.1" },
-      { label: "PF", value: "0", max: "4.5" },
+      { label: "PF ", value: "0", max: "4.5" },
       { label: "TOV", value: "0", max: "5" }
     ],
   };
@@ -38,18 +38,20 @@ const PlayersPage = () => {
       { label: "FG%", value: "0", max: "67" },
       { label: "FGA", value: "0", max: "27.8" },
       { label: "FGM", value: "0", max: "12.1" },
-      { label: "3PT%", value: "0", max: "45.4" },
-      { label: "3PTA", value: "0", max: "13.2" },
-      { label: "3PTM", value: "0", max: "5.3" },
+      { label: "3P%", value: "0", max: "45.4" },
+      { label: "3PA", value: "0", max: "13.2" },
+      { label: "3PM", value: "0", max: "5.3" },
       { label: "FT%", value: "0", max: "92.4" },
       { label: "FTA", value: "0", max: "10.2" },
-      { label: "GP", value: "0", max: "82" },
+      { label: "GP ", value: "0", max: "82" },
       { label: "MIN", value: "0", max: "41.1" },
-      { label: "PF", value: "0", max: "4.5" },
+      { label: "PF ", value: "0", max: "4.5" },
       { label: "TOV", value: "0", max: "5" }
     ],
   };
   let initialPlayerCardData = {player1: player1CardData, player2: player2CardData}
+  
+  // STATE
   const [playerCardData, setPlayerCardData] = useState(initialPlayerCardData);
 
   const handlePlayerInputSubmit = ({ player1, player2 }) => {
@@ -63,7 +65,7 @@ const PlayersPage = () => {
         let player1Data = playerData.player1stats[0];
         let player2Data = playerData.player2stats[0];
         let player1ProcessedData = {
-          info: { playerName: "", age: player1Data.PLAYER_AGE, team: player1Data.TEAM_ABBREVIATION, season: player1Data.SEASON_ID },
+          info: { playerName: player1.name, age: player1Data.PLAYER_AGE, team: player1Data.TEAM_ABBREVIATION, season: player1Data.SEASON_ID },
           stats: [
             { label: "PPG", value: player1Data.PTS, max: "35.4" },
             { label: "AST", value: player1Data.AST, max: "11.7" },
@@ -73,18 +75,18 @@ const PlayersPage = () => {
             { label: "FG%", value: Number(player1Data.FG_PCT*100).toPrecision(3), max: "67" },
             { label: "FGA", value: player1Data.FGA, max: "27.8" },
             { label: "FGM", value: player1Data.FGM, max: "12.1" },
-            { label: "3PT%", value: Number(player1Data.FG3_PCT*100).toPrecision(3), max: "45.4" },
-            { label: "3PTA", value: player1Data.FG3A, max: "13.2" },
-            { label: "3PTM", value: player1Data.FG3M, max: "5.3" },
+            { label: "3P%", value: Number(player1Data.FG3_PCT*100).toPrecision(3), max: "45.4" },
+            { label: "3PA", value: player1Data.FG3A, max: "13.2" },
+            { label: "3PM", value: player1Data.FG3M, max: "5.3" },
             { label: "FT%", value: Number(player1Data.FT_PCT*100).toPrecision(3), max: "92.4" },
             { label: "FTA", value: player1Data.FTA, max: "10.2" },
-            { label: "GP", value: player1Data.GP, max: "82" },
+            { label: "GP ", value: player1Data.GP, max: "82" },
             { label: "MIN", value: player1Data.MIN, max: "41.1" },
-            { label: "PF", value: player1Data.PF, max: "4.5" },
+            { label: "PF ", value: player1Data.PF, max: "4.5" },
             { label: "TOV", value: player1Data.TOV, max: "5" }
           ]}
           let player2ProcessedData = {
-            info: { playerName: "", age: player2Data.PLAYER_AGE, team: player2Data.TEAM_ABBREVIATION, season: player2Data.SEASON_ID },
+            info: { playerName: player2.name, age: player2Data.PLAYER_AGE, team: player2Data.TEAM_ABBREVIATION, season: player2Data.SEASON_ID },
             stats: [
               { label: "PPG", value: player2Data.PTS, max: "35.4" },
               { label: "AST", value: player2Data.AST, max: "11.7" },
@@ -94,14 +96,14 @@ const PlayersPage = () => {
               { label: "FG%", value: Number(player2Data.FG_PCT*100).toPrecision(3), max: "67" },
               { label: "FGA", value: player2Data.FGA, max: "27.8" },
               { label: "FGM", value: player2Data.FGM, max: "12.1" },
-              { label: "3PT%", value: Number(player2Data.FG3_PCT*100).toPrecision(3), max: "45.4" },
-              { label: "3PTA", value: player2Data.FG3A, max: "13.2" },
-              { label: "3PTM", value: player2Data.FG3M, max: "5.3" },
+              { label: "3P%", value: Number(player2Data.FG3_PCT*100).toPrecision(3), max: "45.4" },
+              { label: "3PA", value: player2Data.FG3A, max: "13.2" },
+              { label: "3PM", value: player2Data.FG3M, max: "5.3" },
               { label: "FT%", value: Number(player2Data.FT_PCT*100).toPrecision(3), max: "92.4" },
               { label: "FTA", value: player2Data.FTA, max: "10.2" },
-              { label: "GP", value: player2Data.GP, max: "82" },
+              { label: "GP ", value: player2Data.GP, max: "82" },
               { label: "MIN", value: player2Data.MIN, max: "41.1" },
-              { label: "PF", value: player2Data.PF, max: "4.5" },
+              { label: "PF ", value: player2Data.PF, max: "4.5" },
               { label: "TOV", value: player2Data.TOV, max: "5" }
             ]}
 

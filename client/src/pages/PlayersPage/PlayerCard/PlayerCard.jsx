@@ -6,10 +6,10 @@ const PlayerCard = (props) => {
   let playerName = props.player.info.playerName;
   let age = props.player.info.age;
   let team = props.player.info.team;
-  let activity = props.player.info.activity;
+  let season = props.player.info.season
   return (
     <div className={styles.statsCard}>
-      <div className={styles.season}>2022-24 Season Stats</div>
+      <div className={styles.season}>{season} Season Stats</div>
       <div className={styles.content}>
         <div className={styles.playerInfo}>
           <div className={styles.name}>Name: {playerName}</div>
@@ -21,7 +21,6 @@ const PlayerCard = (props) => {
         </div>
       </div>
         <PlayerStats stats={props.player.stats}/>
-      <button className={styles.changePlayer}>Change player</button>
     </div>
   );
 };
