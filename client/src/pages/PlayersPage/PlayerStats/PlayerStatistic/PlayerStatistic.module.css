@@ -5,4 +5,5 @@
 
 p{
     width: 87px;
+    flex-shrink: 0;
 }
