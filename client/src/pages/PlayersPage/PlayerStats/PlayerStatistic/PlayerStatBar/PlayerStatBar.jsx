@@ -18,7 +18,7 @@ const PlayerStatBar = (props) => {
     const barStyle = {
         width: barWidth,
         transition: 'width 0.5s ease-out',
-        boxShadow: comparison ? '0px 0px 10px 2px green' : '' // Apply green box shadow if comparison is true
+        boxShadow: comparison ? '0px 0px 15px green' : '' // Apply color box shadow if comparison is true
     };
 
     return (
