@@ -1,5 +1,6 @@
 import PlayerCard from "./PlayerCard/PlayerCard";
 import PlayerInput from "./PlayerInput/PlayerInput";
+import AdvancedComp from "./AdvancedComp/AdvancedComp";
 import styles from "./PlayersPage.module.css";
 import axios from "axios";
 import { useState } from "react";
@@ -127,6 +128,7 @@ const PlayersPage = () => {
           <PlayerCard player={playerCardData.player1} />
           <PlayerCard player={playerCardData.player2} />
         </div>
+        <AdvancedComp onSubmit={handlePlayerInputSubmit}/>
       </div>
     </section>
   );
