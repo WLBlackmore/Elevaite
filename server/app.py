@@ -3,7 +3,17 @@ from flask_cors import CORS
 from players import getPlayerSeasonStats
 import pandas as pd
 import json  
+import openai
+from dotenv import load_dotenv
+import os
 
+# Load the .env file
+load_dotenv()
+
+# Set up the OpenAI API key
+openai.api_key = os.getenv("OPEN_AI_KEY")
+
+# Initialize the Flask app
 app = Flask(__name__)
 CORS(app)
 
