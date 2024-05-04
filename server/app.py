@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from players import getPlayerSeasonStats
 import pandas as pd
-import json  
+import json
 import openai
 from dotenv import load_dotenv
 import os
@@ -10,8 +10,10 @@ import os
 # Load the .env file
 load_dotenv()
 
-# Set up the OpenAI API key
-openai.api_key = os.getenv("OPEN_AI_KEY")
+# Initialize the OpenAI client
+client = openai.OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY")
+)
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -33,6 +35,22 @@ def receive_player_data():
         "player2stats": player2_json
     }
     
+    # Formulating the prompt for OpenAI
+    prompt = "Who is the better player?\nPlayer 1: " + data['player1']['name'] + "\nPlayer 2: " + data['player2']['name'] + "\n"
+    
+    # Call the OpenAI API using the updated method for chat completion
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {"role": "system", "content": "You are helping to compare two sports players based on their stats."},
+            {"role": "user", "content": prompt}
+        ],
+        model="gpt-3.5-turbo"
+    )
+    
+    # Get the response text
+    answer = chat_completion['choices'][0]['message']['content']
+    print(answer)  # Print the model's response to the console
+
     return jsonify(combined_response), 200
 
 if __name__ == '__main__':
