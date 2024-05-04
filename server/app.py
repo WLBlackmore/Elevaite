@@ -36,13 +36,13 @@ def receive_player_data():
     }
     
     # Formulating the prompt for OpenAI
-    prompt = "Who is the better player?\nPlayer 1: " + data['player1']['name'] + "\nPlayer 2: " + data['player2']['name'] + "\n"
+    prompt = "which player is better? Player 1: " + data['player1']['name'] + " in the " + data['player1']['season'] + " season. Player 2: " + data['player2']['name'] + " in the " + data['player2']['season'] + " season."
     
    # Call the OpenAI API using the updated method for chat completion
     chat_completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4-turbo",
         messages=[
-           {"role": "system", "content": "You are helping to compare two sports players based on their stats."},
+           {"role": "system", "content": "You are helping to compare two sports players based on their stats. Compare in these categories: advanced stats (e.g PER, WS, BPM), roles, and accolaides."},
             {"role": "user", "content": prompt}
      ]
      
