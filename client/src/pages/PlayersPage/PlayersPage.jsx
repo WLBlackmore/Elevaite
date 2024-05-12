@@ -55,6 +55,16 @@ const PlayersPage = () => {
   // STATE
   const [playerCardData, setPlayerCardData] = useState(initialPlayerCardData);
 
+  const handleAdvancedCompClick = () => {
+      console.log("Advanced Comp Clicked");
+      axios.post("http://localhost:5000/advancedcomp", {player1: playerCardData.player1, player2: playerCardData.player2})
+      .then((response) => {
+        // Handle the response here
+        let advancedCompData = response.data;
+        console.log(advancedCompData);
+      })
+  }
+
   const handlePlayerInputSubmit = ({ player1, player2 }) => {
     console.log("Player 1 Data:", player1);
     console.log("Player 2 Data:", player2);
@@ -128,7 +138,7 @@ const PlayersPage = () => {
           <PlayerCard player={playerCardData.player1} />
           <PlayerCard player={playerCardData.player2} />
         </div>
-        <AdvancedComp onSubmit={handlePlayerInputSubmit}/>
+        <AdvancedComp onAdvancedCompClick={handleAdvancedCompClick} />
       </div>
     </section>
   );
