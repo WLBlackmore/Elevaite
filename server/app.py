@@ -34,8 +34,17 @@ def receive_player_data():
         "player1stats": player1_json,
         "player2stats": player2_json
     }
+
+    return jsonify(combined_response), 200
+
+
+@app.route('/advancedcomp', methods=['POST'])
+def advanced_comparison():
+
+   # Get the data from the request
+    data = request.get_json()
     
-    # Formulating the prompt for OpenAI
+   # Formulating the prompt for OpenAI
     prompt = "which player is better? Player 1: " + data['player1']['name'] + " in the " + data['player1']['season'] + " season. Player 2: " + data['player2']['name'] + " in the " + data['player2']['season'] + " season."
     
    # Call the OpenAI API using the updated method for chat completion
@@ -51,11 +60,9 @@ def receive_player_data():
     # Get the response text
     answer = chat_completion.choices[0].message
 
-    print(answer)  # Print the model's response to the console
-
-
-    return jsonify(combined_response), 200
+    return jsonify({"answer": answer}), 200
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
 

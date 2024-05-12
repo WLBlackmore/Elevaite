@@ -57,7 +57,7 @@ const PlayersPage = () => {
 
   const handleAdvancedCompClick = () => {
       console.log("Advanced Comp Clicked");
-      axios.post("http://localhost:5000/advancedcomp", {player1: playerCardData.player1, player2: playerCardData.player2})
+      axios.post("http://localhost:5000/advancedcomp", {})
       .then((response) => {
         // Handle the response here
         let advancedCompData = response.data;

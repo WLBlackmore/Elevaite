@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from "./PlayerInput.module.css"; // Assuming the CSS file is correctly linked
+import styles from "./PlayerInput.module.css"; 
 
 const PlayerInput = ({ onSubmit }) => {
   const [player1, setPlayer1] = useState({ name: '', season: '' });
