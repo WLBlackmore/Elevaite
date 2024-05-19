@@ -45,7 +45,7 @@ def advanced_comparison():
     data = request.get_json()
     
    # Formulating the prompt for OpenAI
-    prompt = "which player is better? Player 1: " + data['player1']['name'] + " in the " + data['player1']['season'] + " season. Player 2: " + data['player2']['name'] + " in the " + data['player2']['season'] + " season."
+    prompt = "which player is better? Player 1: " + data['player1']['playerName'] + " in the " + data['player1']['season'] + " season. Player 2: " + data['player2']['playerName'] + " in the " + data['player2']['season'] + " season."
     
    # Call the OpenAI API using the updated method for chat completion
     chat_completion = client.chat.completions.create(
@@ -59,8 +59,9 @@ def advanced_comparison():
 
     # Get the response text
     answer = chat_completion.choices[0].message
-
-    return jsonify({"answer": answer}), 200
+    
+    print(answer.content)
+    return jsonify({"response": answer.content}), 200
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
