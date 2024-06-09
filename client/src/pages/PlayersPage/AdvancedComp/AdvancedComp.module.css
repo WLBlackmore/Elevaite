@@ -55,3 +55,8 @@
     fill: white;
     transform: scale(1.2);
   } 
+
+.ACresp {
+  width: 100%;
+  text-align: center; /* Optional: to center the text */
+}

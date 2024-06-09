@@ -15,6 +15,7 @@ const AdvancedComp = (props) => {
         </svg>
         <span className={styles.text}>Generate Advanced Insights</span>
       </button>
+      <p className={styles.ACresp}>{props.ACresp}</p>
     </div>
   );
 };

@@ -139,7 +139,7 @@ const PlayersPage = () => {
           <PlayerCard player={playerCardData.player1} />
           <PlayerCard player={playerCardData.player2} />
         </div>
-        <AdvancedComp onAdvancedCompClick={handleAdvancedCompClick} />
+        <AdvancedComp onAdvancedCompClick={handleAdvancedCompClick} ACresp={advancedcompData}/>
         <div className={styles.advancedCompContainer}>
           <p className={styles.advancedCompText}>{advancedcompData}</p>
           </div>
