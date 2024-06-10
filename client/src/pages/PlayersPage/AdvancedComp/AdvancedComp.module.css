@@ -1,5 +1,5 @@
 .inputCard {
-    background: rgba(45, 45, 45, 0.5);
+    background: rgba(45, 45, 45, 0.7);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -58,5 +58,7 @@
 
 .ACresp {
   width: 100%;
-  text-align: center; /* Optional: to center the text */
+  text-align: left; /* Optional: to center the text */
+  font-size: 13pt;
+  line-height: 1.7;
 }

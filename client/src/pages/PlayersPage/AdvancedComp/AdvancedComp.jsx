@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "./AdvancedComp.module.css";
+import TypingEffect from './TypingEffect/TypingEffect';
 
 
 
@@ -15,7 +16,7 @@ const AdvancedComp = (props) => {
         </svg>
         <span className={styles.text}>Generate Advanced Insights</span>
       </button>
-      <p className={styles.ACresp}>{props.ACresp}</p>
+      <TypingEffect text={props.ACresp} speed={175} />
     </div>
   );
 };
