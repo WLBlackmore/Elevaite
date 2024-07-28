@@ -1,21 +1,32 @@
 import React, { useState, useEffect } from 'react';
+import styles from './TypingEffect.module.css';
 
-const TypingEffect = ({ text, speed = 100 }) => {
+const TypingEffect = ({ text, speed = 50, cursor = true }) => {
   const [displayedText, setDisplayedText] = useState('');
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setDisplayedText((prev) => prev + text[index]);
-      index += 1;
-      if (index >= text.length) {
-        clearInterval(interval);
-      }
-    }, speed);
-    return () => clearInterval(interval);
-  }, [text, speed]);
+    if (index < text.length) {
+      const timeoutId = setTimeout(() => {
+        setDisplayedText((prev) => prev + text[index]);
+        setIndex(index + 1);
+      }, speed);
 
-  return <span>{displayedText}</span>;
+      return () => clearTimeout(timeoutId);
+    }
+  }, [index, text, speed]);
+
+  useEffect(() => {
+    setDisplayedText('');
+    setIndex(0);
+  }, [text]);
+
+  return (
+    <span>
+      {displayedText}
+      {cursor && index < text.length && <span className={styles.cursor}>|</span>}
+    </span>
+  );
 };
 
 export default TypingEffect;

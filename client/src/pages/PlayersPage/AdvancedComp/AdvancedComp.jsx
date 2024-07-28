@@ -2,12 +2,11 @@ import React from 'react';
 import styles from "./AdvancedComp.module.css";
 import TypingEffect from './TypingEffect/TypingEffect';
 
-
-
 const AdvancedComp = (props) => {
   const handleAdvancedCompClick = () => {
     props.onAdvancedCompClick();
-  }
+  };
+
   return (
     <div className={styles.inputCard}>
       <button className={styles.btn} onClick={handleAdvancedCompClick}>
@@ -16,7 +15,7 @@ const AdvancedComp = (props) => {
         </svg>
         <span className={styles.text}>Generate Advanced Insights</span>
       </button>
-      <TypingEffect text={props.ACresp} speed={175} />
+      <TypingEffect text={props.ACresp} speed={10} />
     </div>
   );
 };
