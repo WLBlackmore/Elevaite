@@ -1,16 +1,59 @@
+.typingContainer {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
 .cursor {
-    display: inline-block;
-    width: 1px;
+  display: inline-block;
+  width: 1px;
+  background-color: black;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
     background-color: black;
-    animation: blink 1s step-end infinite;
   }
-  
-  @keyframes blink {
-    from, to {
-      background-color: transparent;
-    }
-    50% {
-      background-color: black;
-    }
-  }
-  
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.75em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
