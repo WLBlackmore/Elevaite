@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const PlayersPage = () => {
   let player1CardData = {
-    info: { playerName: "", age: "", team: "", season: "" },
+    info: { playerName: "", age: "", team: "", season: "", image_url: "" },
     stats: [
       { label: "PPG", value: "0", max: "35.4" },
       { label: "AST", value: "0", max: "11.7" },
@@ -29,7 +29,7 @@ const PlayersPage = () => {
     ],
   };
   let player2CardData = {
-    info: { playerName: "", age: "", team: "", season: "" },
+    info: { playerName: "", age: "", team: "", season: "", image_url: "" },
     stats: [
       { label: "PPG", value: "0", max: "35.4" },
       { label: "AST", value: "0", max: "11.7" },
@@ -77,7 +77,7 @@ const PlayersPage = () => {
         let player1Data = playerData.player1stats[0];
         let player2Data = playerData.player2stats[0];
         let player1ProcessedData = {
-          info: { playerName: player1.name, age: player1Data.PLAYER_AGE, team: player1Data.TEAM_ABBREVIATION, season: player1Data.SEASON_ID },
+          info: { playerName: player1.name, age: player1Data.PLAYER_AGE, team: player1Data.TEAM_ABBREVIATION, season: player1Data.SEASON_ID, image_url: playerData.player1headshot },
           stats: [
             { label: "PPG", value: player1Data.PTS, max: "35.4", comparison: player1Data.PTS > player2Data.PTS },
             { label: "AST", value: player1Data.AST, max: "11.7", comparison: player1Data.AST > player2Data.AST },
@@ -98,7 +98,7 @@ const PlayersPage = () => {
             { label: "TOV", value: player1Data.TOV, max: "5", comparison: player1Data.TOV < player2Data.TOV }
           ]}
           let player2ProcessedData = {
-            info: { playerName: player2.name, age: player2Data.PLAYER_AGE, team: player2Data.TEAM_ABBREVIATION, season: player2Data.SEASON_ID },
+            info: { playerName: player2.name, age: player2Data.PLAYER_AGE, team: player2Data.TEAM_ABBREVIATION, season: player2Data.SEASON_ID, image_url: playerData.player2headshot },
             stats: [
               { label: "PPG", value: player2Data.PTS, max: "35.4", comparison: player2Data.PTS > player1Data.PTS },
               { label: "AST", value: player2Data.AST, max: "11.7", comparison: player2Data.AST > player1Data.AST },

@@ -7,6 +7,7 @@ const PlayerCard = (props) => {
   let age = props.player.info.age;
   let team = props.player.info.team;
   let season = props.player.info.season
+  let image_url = props.player.info.image_url;
   return (
     <div className={styles.statsCard}>
       <div className={styles.season}>{season} Season Stats</div>
@@ -17,7 +18,7 @@ const PlayerCard = (props) => {
           <div className={styles.team}>Team: {team}</div>
         </div>
         <div className={styles.headshot}>
-          <img src={headshot} alt={`${playerName} headshot`} />
+          <img src={image_url ? image_url : headshot} alt={`${playerName} headshot`} />
         </div>
       </div>
         <PlayerStats stats={props.player.stats}/>

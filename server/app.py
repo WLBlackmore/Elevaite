@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from players import getPlayerSeasonStats
+from players import getPlayerSeasonStats, getPlayerHeadshot
 import pandas as pd
 import json
 import openai
@@ -34,6 +34,16 @@ def receive_player_data():
         "player1stats": player1_json,
         "player2stats": player2_json
     }
+
+    # Get headshots for both players
+    player1_headshot = getPlayerHeadshot(data['player1']['name'])
+    player2_headshot = getPlayerHeadshot(data['player2']['name'])
+    print(player1_headshot)
+    print(player2_headshot)
+
+    # Add headshots to the response
+    combined_response['player1headshot'] = player1_headshot
+    combined_response['player2headshot'] = player2_headshot
 
     return jsonify(combined_response), 200
 
