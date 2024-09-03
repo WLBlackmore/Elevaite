@@ -1,5 +1,5 @@
 .inputCard {
-    background: rgba(45, 45, 45, 0.5);
+    background: rgba(45, 45, 45, 0.3);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 40px;
+    backdrop-filter: blur(3px); /* Apply a blur effect to the background */
 }
 
 .header {

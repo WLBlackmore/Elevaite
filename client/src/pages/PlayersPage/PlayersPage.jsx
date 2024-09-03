@@ -55,24 +55,16 @@ const PlayersPage = () => {
   // STATE
   const [playerCardData, setPlayerCardData] = useState(initialPlayerCardData);
   const [advancedcompData, setAdvancedCompData] = useState("");
-
-  const handleAdvancedCompClick = () => {
-      console.log("Advanced Comp Clicked");
-      axios.post("http://localhost:5000/advancedcomp", {player1: playerCardData.player1.info, player2: playerCardData.player2.info})
-      .then((response) => {
-        // Handle the response here
-        setAdvancedCompData(response.data.response);
-        console.log("Advanced Comp Data:", response.data.response);
-      })
-  }
+  const [showAdvancedComp, setShowAdvancedComp] = useState(false);
 
   const handlePlayerInputSubmit = ({ player1, player2 }) => {
     console.log("Player 1 Data:", player1);
     console.log("Player 2 Data:", player2);
+
+    // Fetch player data and advanced comparison
     axios
       .post("http://localhost:5000/players", { player1, player2 })
       .then((response) => {
-        // Handle the response here
         let playerData = response.data;
         let player1Data = playerData.player1stats[0];
         let player2Data = playerData.player2stats[0];
@@ -118,17 +110,28 @@ const PlayersPage = () => {
               { label: "PF", value: player2Data.PF, max: "4.5", comparison: player2Data.PF < player1Data.PF },
               { label: "TOV", value: player2Data.TOV, max: "5", comparison: player2Data.TOV < player1Data.TOV }
             ]
-            }
+          }
 
-            let combinedProcessedPlayerData = {player1: player1ProcessedData, player2: player2ProcessedData};
-            setPlayerCardData(combinedProcessedPlayerData);
-        
+          let combinedProcessedPlayerData = {player1: player1ProcessedData, player2: player2ProcessedData};
+          setPlayerCardData(combinedProcessedPlayerData);
+
+          // Fetch advanced comparison data
+          axios.post("http://localhost:5000/advancedcomp", {player1: player1ProcessedData.info, player2: player2ProcessedData.info})
+          .then((response) => {
+            setAdvancedCompData(response.data.response);
+          })
+          .catch((error) => {
+            console.error("Error fetching advanced comparison:", error);
+          });
         
       })
       .catch((error) => {
-        // Handle the error here
         console.error("Error:", error);
       });
+  };
+
+  const handleAdvancedCompClick = () => {
+    setShowAdvancedComp(true);
   };
 
   return (
@@ -139,7 +142,10 @@ const PlayersPage = () => {
           <PlayerCard player={playerCardData.player1} />
           <PlayerCard player={playerCardData.player2} />
         </div>
-        <AdvancedComp onAdvancedCompClick={handleAdvancedCompClick} ACresp={advancedcompData}/>
+        <AdvancedComp 
+          onAdvancedCompClick={handleAdvancedCompClick} 
+          ACresp={showAdvancedComp ? advancedcompData : ""} 
+        />
       </div>
     </section>
   );
