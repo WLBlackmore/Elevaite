@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './TypingEffect.module.css';
 
-const TypingEffect = ({ text, speed = 50, cursor = true }) => {
+const TypingEffect = ({ text, speed = 50 }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [index, setIndex] = useState(0);
 
@@ -43,7 +43,6 @@ const TypingEffect = ({ text, speed = 50, cursor = true }) => {
   return (
     <div className={styles.typingContainer}>
       {formatText(displayedText)}
-      {cursor && index < text.length && <span className={styles.cursor}>|</span>}
     </div>
   );
 };
